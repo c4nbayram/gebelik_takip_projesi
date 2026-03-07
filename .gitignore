@@ -1,0 +1,10 @@
+build/
+.dart_tool/
+.idea/
+.vscode/
+.packages
+*.iml
+*.log
+*.tmp
+coverage/
+
