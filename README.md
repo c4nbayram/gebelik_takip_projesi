@@ -2,7 +2,7 @@
 
 ## Proje Hakkında
 
-Bu proje, hamileler ve bebek bakıcılarına gebelik süreci boyunca destek sağlayan bir mobil uygulamadır. Uygulama, kullanıcılara gebelik hakkında bilgi edinme, ilaçlarını takip etme, doktor randevularını yönetme ve danışmanlık hizmeti sunmaktadır.
+Bu proje, hamileler ve bebek bakıcılarına gebelik süreci boyunca destek sağlayan bir mobil uygulamadır. Uygulama, kullanıcılara gebelik hakkında bilgi edinme, ilaçlarını takip etme, doktor randevularını yönetme ve AI destekli danışmanlık hizmeti sunmaktadır.
 
 ## Temel Özellikler
 
