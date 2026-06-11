@@ -1,64 +1,58 @@
-# Gebelik Takip - AI Destekli Mobil Uygulama
+# Gebelik Takip Mobil Uygulaması
 
-![Flutter](https://img.shields.io/badge/Flutter-3.2+-blue)
-![Dart](https://img.shields.io/badge/Dart-3.2+-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+## Proje Hakkında
 
-## 📋 Proje Hakkında
+Bu proje, hamileler ve bebek bakıcılarına gebelik süreci boyunca destek sağlayan bir mobil uygulamadır. Uygulama, kullanıcılara gebelik hakkında bilgi edinme, ilaçlarını takip etme, doktor randevularını yönetme ve danışmanlık hizmeti sunmaktadır.
 
-**Gebelik Takip**, hamileler ve bebek bakıcılarına yönelik AI destekli mobil uygulama. Kullanıcılar gebelik süreci hakkında bilgi alabilir, ilaçları takip edebilir, randevularını yönetebilir ve AI asistanla sohbet aracılığıyla soru sorabilirler.
+## Temel Özellikler
 
-### Temel Özellikler
+- Sohbet Aracı: Gebelik süreci hakkında sorular sorabilme ve danışmanlık alabilme
+- Randevu Takibi: Doktor randevularını yönetme ve takip etme
+- İlaç Takibi: Kullanılan ilaçlar ve dozajlarının kaydı
+- Dashboard: Gebelik sürecinin görsel takibi
+- Kullanıcı Profili: Kişisel bilgiler ve sağlık durumunun yönetimi
+- Kimlik Doğrulama: E-posta ve parola ile güvenli giriş
+- Yerel Veri Depolaması: Cihazda güvenli veri saklama
 
-- 🤖 **AI Destekli Sohbet**: OpenAI entegrasyonu ile AI asistanın gerçek zamanlı danışmanlığı
-- 📅 **Randevu Takibi**: Doktor randevularını yönetme ve takip etme
-- 💊 **İlaç Takibi**: Kullanılan ilaçlar ve dozajlarının kaydı
-- 📊 **Dashboard**: Gebelik sürecinin görsel takibi
-- 👤 **Kullanıcı Profili**: Kişisel bilgiler ve sağlık durumunun yönetimi
-- 🔐 **Kimlik Doğrulama**: E-posta ve parola ile güvenli login
-- 💾 **Yerel Veri Depolaması**: SharedPreferences ile cihazda güvenli veri saklama
-- 🌙 **Dark Mode**: Modern ve kullanıcı dostu tasarım
-
-## 🛠️ Teknoloji Stack
+## Teknoloji Stack
 
 | Teknoloji | Versiyon | Amaç |
 |-----------|---------|------|
-| Flutter | 3.2+ | UI Framework |
+| Flutter | 3.2+ | Mobil UI Framework |
 | Dart | 3.2+ | Programlama Dili |
 | Provider | 6.1.2 | State Management |
-| OpenAI API | Latest | AI İşlemleri |
-| SharedPreferences | 2.2.3 | Local Storage |
+| SharedPreferences | 2.2.3 | Yerel Veri Depolaması |
 | HTTP | 1.2.2 | API Çağrıları |
-| Intl | 0.19.0 | Lokalizasyon |
+| Intl | 0.19.0 | Dil Desteği |
 
-## 📱 Uygulama Akışı
+## Uygulama Akışı
 
 ```
-Onboarding → Authentication → Initial Setup → Home Dashboard
+Onboarding → Authentication → İlk Kurulum → Ana Sayfa
 ```
 
-### Ekranlar
+## Ekranlar
 
-1. **Onboarding Screen** - Uygulamaya hoş geldin mesajı ve tanıtım
-2. **Auth Screen** - Login ve kayıt işlemleri
-3. **Initial Setup Screen** - Kullanıcı bilgilerinin ilk kurulumu
-4. **Main Shell** - Ana uygulama arayüzü
-   - Dashboard - Ana sayfa ve özet bilgiler
+1. Onboarding Screen - Uygulamaya hoş geldin
+2. Auth Screen - Giriş ve kayıt
+3. Initial Setup Screen - Kişisel bilgileri doldurma
+4. Main Shell - Ana uygulama
+   - Dashboard - Ana sayfa
    - Appointments - Randevu yönetimi
    - Medications - İlaç takibi
    - Track - İlerleme takibi
-   - Chat - AI asistanla sohbet
+   - Chat - Danışmanlık hizmeti
    - Profile - Profil ayarları
 
-## 🚀 Kurulum
+## Kurulum
 
 ### Ön Koşullar
 
 - Flutter SDK 3.2.0 veya üzeri ([Kurulum](https://flutter.dev/docs/get-started/install))
-- Dart 3.2.0 veya üzeri (Flutter SDK ile birlikte gelir)
-- OpenAI API Key (Chat özelliği için isteğe bağlı)
+- Dart 3.2.0 veya üzeri
+- Danışmanlık hizmeti için kendi API anahtarınız
 
-### Adım 1: Repository'i Clone Et
+### Adım 1: Repository'i İndir
 
 ```bash
 git clone https://github.com/yourusername/gebelik_takip_projesi.git
@@ -71,21 +65,24 @@ cd gebelik_takip_projesi
 flutter pub get
 ```
 
-### Adım 3: OpenAI API Key Konfigürasyonu (İsteğe Bağlı)
+### Adım 3: API Anahtarı Konfigürasyonu
 
-AI sohbet özelliğini kullanmak için OpenAI API key'i ayarla:
+Uygulama şu anda lokal ortamda çalıştığı için danışmanlık hizmetini kullanmak istiyorsanız kendi API anahtarınızı yapılandırmanız gereklidir.
 
 1. `lib/src/config/app_config.dart` dosyasını aç
-2. `openAiApiKey` değişkenini güncelle:
+2. Aşağıdaki bölümü bulun:
 
 ```dart
 class AppConfig {
-  static const String openAiApiKey = "YOUR_OPENAI_API_KEY_HERE";
-  static const bool localOnly = false; // API kullanmak için false yapın
+  static const String openAiApiKey = "PUT_OPENAI_API_KEY_HERE";
+  static const bool localOnly = true;
 }
 ```
 
-**Not**: Production'a push etmeden API key'i kaldırmayı unutma!
+3. `openAiApiKey` değerini kendi API anahtarınızla değiştirin
+4. `localOnly` değerini `false` olarak ayarlayın
+
+**Önemli Not**: API anahtarınızı hiçbir zaman repository'ye commit etmeyin!
 
 ### Adım 4: Uygulamayı Çalıştır
 
@@ -100,64 +97,61 @@ flutter run -d <device_id>
 flutter run --release
 ```
 
-## 💻 Geliştirme
-
-### Proje Yapısı
+## Proje Yapısı
 
 ```
 lib/
-├── main.dart                          # Uygulamaya giriş noktası
+├── main.dart                          # Giriş noktası
 ├── src/
-│   ├── app.dart                       # Ana uygulama widget'ı
+│   ├── app.dart                       # Ana uygulama
 │   ├── config/
-│   │   └── app_config.dart           # Global konfigürasyonlar
+│   │   └── app_config.dart           # Ayarlar
 │   ├── core/
-│   │   └── entry_flow_signal.dart    # Navigasyon yönetimi
+│   │   └── entry_flow_signal.dart    # Navigasyon
 │   ├── models/
 │   │   └── app_models.dart           # Veri modelleri
 │   ├── providers/
-│   │   └── auth_provider.dart        # State management (kimlik doğrulama)
+│   │   └── auth_provider.dart        # Kimlik doğrulama
 │   ├── screens/
-│   │   ├── auth_screen.dart          # Login/Register ekranı
+│   │   ├── auth_screen.dart          # Giriş ekranı
 │   │   ├── dashboard_screen.dart     # Ana sayfa
 │   │   ├── appointments_screen.dart  # Randevu yönetimi
 │   │   ├── medications_screen.dart   # İlaç takibi
 │   │   ├── track_screen.dart         # İlerleme takibi
-│   │   ├── chat_screen.dart          # AI sohbet ekranı
-│   │   ├── profile_screen.dart       # Profil ayarları
-│   │   ├── onboarding_screen.dart    # Tanıtım ekranı
+│   │   ├── chat_screen.dart          # Danışmanlık
+│   │   ├── profile_screen.dart       # Profil
+│   │   ├── onboarding_screen.dart    # Tanıtım
 │   │   ├── initial_setup_screen.dart # İlk kurulum
-│   │   └── main_shell.dart           # Ana uygulama kabuğu
+│   │   └── main_shell.dart           # Ana kabuk
 │   ├── services/
 │   │   ├── api_service.dart          # API çağrıları
-│   │   └── local_account_store.dart  # Yerel veri depolaması
+│   │   └── local_account_store.dart  # Yerel depolama
 │   ├── theme/
-│   │   ├── app_tokens.dart           # Renk ve stil tanımlamaları
-│   │   └── ...                       # Tema dosyaları
+│   │   └── app_tokens.dart           # Stil ve renkler
 │   └── widgets/
-│       └── calm_background.dart      # Özel widget'lar
+│       └── calm_background.dart      # Özel tasarım öğeleri
 ├── assets/
-│   └── week/                          # Gebelik haftası bilgileri
-└── pubspec.yaml                       # Proje bağımlılıkları
+│   └── week/                          # Haftalık bilgiler
+└── pubspec.yaml                       # Proje ayarları
 ```
 
-### Önemli Dosyalar
+## Önemli Dosyalar
 
 | Dosya | Açıklama |
 |-------|----------|
-| `lib/src/config/app_config.dart` | API key, URL ve flag ayarları |
-| `lib/src/providers/auth_provider.dart` | Kimlik doğrulama ve state yönetimi |
-| `lib/src/services/api_service.dart` | Backend API ile iletişim |
-| `lib/src/theme/app_tokens.dart` | Tasarım sistem ve renk paleti |
+| `lib/src/config/app_config.dart` | API anahtarı ve ayarları |
+| `lib/src/providers/auth_provider.dart` | Giriş işlemleri ve durum yönetimi |
+| `lib/src/services/api_service.dart` | Sunucu ile iletişim |
+| `lib/src/theme/app_tokens.dart` | Renkler ve tasarım |
 
-## 📊 Veri Modelleri
+## Veri Modelleri
 
-### Kullanıcı (User)
+### Kullanıcı
 ```dart
 - id: String
 - email: String
 - name: String
-- role: String (caregiver_role)
+- role: String
 - babyName: String
 - city: String
 - birthDate: DateTime?
@@ -167,7 +161,7 @@ lib/
 - maternalChronicCondition: String?
 ```
 
-### Randevu (Appointment)
+### Randevu
 ```dart
 - id: String
 - title: String
@@ -177,7 +171,7 @@ lib/
 - notes: String?
 ```
 
-### İlaç (Medication)
+### İlaç
 ```dart
 - id: String
 - name: String
@@ -187,56 +181,43 @@ lib/
 - notes: String?
 ```
 
-## 🔌 API Entegrasyonu
+## API Entegrasyonu
 
-### OpenAI Chat API
-
-AI sohbet özelliği OpenAI API'sini kullanır:
+Sohbet ve danışmanlık özelliği harici bir API ile çalışır. API çağrısı başarısız olursa uygulama yerel cevaplar kullanarak çalışmaya devam eder, böylece kullanıcı deneyimi kesintisiz kalır.
 
 ```dart
 // lib/src/services/api_service.dart
 Future<String> chatWithAI(String message) async {
-  // OpenAI'a POST isteği gönder
-  // Cevap döndür veya fallback cevap kullan
+  // API'ye istek gönder
+  // Cevap al ya da yerel cevap kullan
 }
 ```
 
-**Fallback Mekanizması**: OpenAI hatası durumunda uygulama yerel cevaplar sağlayarak kullanıcı deneyimini kesintisiz tutmaya çalışır.
+## Güvenlik
 
-## 🔐 Güvenlik
+- Kimlik doğrulama sistemi
+- Yerel veri depolaması
+- API çağrılarında HTTPS
+- API anahtarının güvenli konfigürasyonu
 
-- ✅ Kimlik doğrulama akışı
-- ✅ Yerel veri şifreleme (SharedPreferences)
-- ✅ HTTPS API çağrıları
-- ✅ API key güvenli konfigürasyonu
+**Öneriler**:
+- API anahtarlarını asla code'a yazma
+- Environment variables kullan
+- Bağımlılıkları düzenli güncelle
 
-**Best Practices**:
-- API key'leri hiçbir zaman repository'ye commit etme
-- Environment variables veya secure storage kullan
-- Harici bağımlılıkları düzenli güncelle
-
-## 🧪 Test Etme
-
-### Manuel Test
+## Test Etme
 
 ```bash
-# Onboarding akışını test et
+# Uygulamayı çalıştır
 flutter run
 
 # Debug modda çalıştır
 flutter run -v
 
-# Specific device üzerinde test et
-flutter run -d <device_id>
+# Hot reload (Ctrl+R ya da konsolda 'r' yaz)
 ```
 
-### Hot Reload
-```bash
-# Değişiklikleri anında uygulamaya yansıt
-r (konsolia yazıp Enter)
-```
-
-## 📦 Build Etme
+## Build Etme
 
 ### Android APK
 
@@ -252,69 +233,70 @@ flutter build ios --release
 # Output: build/ios/iphoneos/Runner.app
 ```
 
-## ⚙️ Konfigürasyon
+## Ayarlar
 
-### app_config.dart Ayarları
+`lib/src/config/app_config.dart` dosyasında şu ayarları değiştirebilirsin:
 
 ```dart
 class AppConfig {
-  // API Konfigürasyonu
-  static const String apiBaseUrl = "http://10.0.2.2:3000"; // Emülatör için
-  static const String openAiApiKey = "sk-...";
-  static const bool localOnly = true; // Yerel mod
+  // API Sunucusu
+  static const String apiBaseUrl = "http://10.0.2.2:3000";
   
-  // SharedPreferences Keys
+  // API Anahtarı
+  static const String openAiApiKey = "YOUR_KEY_HERE";
+  
+  // Yerel mod (API kullanmadan çalış)
+  static const bool localOnly = true;
+  
+  // Depolama anahtarları
   static const String seenOnboardingKey = "seen_onboarding";
   static const String authStepDoneKey = "auth_step_done";
   static const String guestModeKey = "guest_mode";
-  // ... diğer ayarlar
 }
 ```
 
-## 📝 Geliştirme Notları
+## Geliştirme Notları
 
-### State Management
-- **Provider**: Kimlik doğrulama ve global state'i yönetmek için kullanılır
-- **Listen**: UI güncellemelerini tetiklemek için ChangeNotifier pattern'i kullanılır
+### Durum Yönetimi
+- Provider kütüphanesi kullanılır
+- ChangeNotifier pattern ile UI güncellemesi sağlanır
 
-### Navigation
-- **Stateful Widget**: Onboarding → Auth → Setup → Home akışını yönetir
-- **EntryFlowSignal**: Navigasyon durumunu değiştirir
+### Navigasyon
+- Onboarding → Giriş → Kurulum → Ana Sayfa akışı
+- EntryFlowSignal ile navigasyon kontrol edilir
 
-### Yerel Depolama
-- **SharedPreferences**: Kullanıcı tercihleri ve basit veriler
-- **LocalAccountStore**: Daha karmaşık veri yapıları için
+### Veri Depolaması
+- SharedPreferences: Basit veriler için
+- LocalAccountStore: Daha karmaşık veriler için
 
-## 🤝 Katkı
+## İyileştirme Alanları
 
-Bu proje aktif olarak geliştirilmektedir. Geliştirilmesi gereken alanlar:
+- Backend API entegrasyonunun tamamlanması
+- Daha fazla danışmanlık kategorisi
+- Grafik ve istatistik paneli
+- Bildirim sistemi
+- Çevrimdışı mod
 
-- [ ] Backend API entegrasyonunun tamamlanması
-- [ ] Daha fazla AI soru-cevap kategorileri
-- [ ] Grafik ve istatistik paneli
-- [ ] Push notification sistemi
-- [ ] Offline mode iyileştirmesi
+## Lisans
 
-## 📄 Lisans
+MIT Lisansı - Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
-Bu proje MIT Lisansı altında lisanslıdır - [LICENSE](LICENSE) dosyasına bakın.
+## Geliştirici
 
-## 👨‍💻 Geliştirici Bilgileri
-
-- **Geliştirici**: Bayramcan Özgül
+- **Ad**: Bayramcan Özgül
 - **E-posta**: canbayram.ozgul@gmail.com
 - **GitHub**: [c4nbayram](https://github.com/c4nbayram)
 
-## 📞 Destek
+## Destek ve İletişim
 
-Sorularınız veya sorunlar için:
-- GitHub Issues'te bir issue açın
+Soru veya sorun için:
+- GitHub'da issue açın
 - E-posta ile iletişim kurun
 
-## 🎯 Hedefler ve Vizyonu
+## Amaç
 
-Bu uygulama, hamilelerin ve bebek bakıcılarının sağlık takiplerini dijitalleştirmeyi ve AI asistanı aracılığıyla güvenilir bilgi alabilmelerini sağlamayı hedeflemektedir. Özellikle kısıtlı sağlık hizmetlerine erişimi olan bölgelerde büyük bir fark yaratabilecek potansiyele sahiptir.
+Bu uygulama, hamilelerin ve bakıcıların sağlık takiplerini dijitalleştirmeyi amaçlar. Özellikle sağlık hizmetlerine erişimi sınırlı olan bölgelerde kullanılabilir.
 
 ---
 
-**Son Güncelleme**: 2026-06-11
+Son Güncelleme: 2026-06-11
