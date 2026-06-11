@@ -6,7 +6,7 @@ Bu proje, hamileler ve bebek bakıcılarına gebelik süreci boyunca destek sağ
 
 ## Temel Özellikler
 
-- Sohbet Aracı: Gebelik süreci hakkında sorular sorabilme ve danışmanlık alabilme
+- Sohbet Aracı: Gebelik süreci hakkında sorular sorabilme ve AI destekli danışmanlık alabilme
 - Randevu Takibi: Doktor randevularını yönetme ve takip etme
 - İlaç Takibi: Kullanılan ilaçlar ve dozajlarının kaydı
 - Dashboard: Gebelik sürecinin görsel takibi
@@ -41,7 +41,7 @@ Onboarding → Authentication → İlk Kurulum → Ana Sayfa
    - Appointments - Randevu yönetimi
    - Medications - İlaç takibi
    - Track - İlerleme takibi
-   - Chat - Danışmanlık hizmeti
+   - Chat - AI Destekli Danışmanlık Hizmeti
    - Profile - Profil ayarları
 
 ## Kurulum
@@ -50,7 +50,7 @@ Onboarding → Authentication → İlk Kurulum → Ana Sayfa
 
 - Flutter SDK 3.2.0 veya üzeri ([Kurulum](https://flutter.dev/docs/get-started/install))
 - Dart 3.2.0 veya üzeri
-- Danışmanlık hizmeti için kendi API anahtarınız
+- AI destekli danışmanlık hizmeti için kendi API anahtarınız
 
 ### Adım 1: Repository'i İndir
 
@@ -67,7 +67,7 @@ flutter pub get
 
 ### Adım 3: API Anahtarı Konfigürasyonu
 
-Uygulama şu anda lokal ortamda çalıştığı için danışmanlık hizmetini kullanmak istiyorsanız kendi API anahtarınızı yapılandırmanız gereklidir.
+Uygulama şu anda lokal ortamda çalıştığı için AI destekli danışmanlık hizmetini kullanmak istiyorsanız kendi API anahtarınızı yapılandırmanız gereklidir.
 
 1. `lib/src/config/app_config.dart` dosyasını aç
 2. Aşağıdaki bölümü bulun:
@@ -118,7 +118,7 @@ lib/
 │   │   ├── appointments_screen.dart  # Randevu yönetimi
 │   │   ├── medications_screen.dart   # İlaç takibi
 │   │   ├── track_screen.dart         # İlerleme takibi
-│   │   ├── chat_screen.dart          # Danışmanlık
+│   │   ├── chat_screen.dart          # AI Destekli Danışmanlık
 │   │   ├── profile_screen.dart       # Profil
 │   │   ├── onboarding_screen.dart    # Tanıtım
 │   │   ├── initial_setup_screen.dart # İlk kurulum
@@ -183,7 +183,7 @@ lib/
 
 ## API Entegrasyonu
 
-Sohbet ve danışmanlık özelliği harici bir API ile çalışır. API çağrısı başarısız olursa uygulama yerel cevaplar kullanarak çalışmaya devam eder, böylece kullanıcı deneyimi kesintisiz kalır.
+Sohbet ve AI destekli danışmanlık özelliği harici bir API ile çalışır. API çağrısı başarısız olursa uygulama yerel cevaplar kullanarak çalışmaya devam eder, böylece kullanıcı deneyimi kesintisiz kalır.
 
 ```dart
 // lib/src/services/api_service.dart
@@ -272,7 +272,7 @@ class AppConfig {
 ## İyileştirme Alanları
 
 - Backend API entegrasyonunun tamamlanması
-- Daha fazla danışmanlık kategorisi
+- Daha fazla AI destekli danışmanlık kategorisi
 - Grafik ve istatistik paneli
 - Bildirim sistemi
 - Çevrimdışı mod
