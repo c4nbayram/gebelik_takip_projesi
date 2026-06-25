@@ -1,0 +1,20 @@
+build/
+.dart_tool/
+.idea/
+.vscode/
+.packages
+*.iml
+*.log
+*.tmp
+coverage/
+
+# Secrets — never commit. Use .env.example as the template.
+.env
+.env.*
+!.env.example
+
+# Stray file from a botched shell redirect
+$null
+
+# Supabase CLI local link/project state
+supabase/.temp/

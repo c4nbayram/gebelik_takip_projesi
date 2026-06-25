@@ -1,0 +1,36 @@
+name: gebelik_bebek_takip
+description: Gebelik takibi ve veri seti tabanlı risk değerlendirme uygulaması.
+publish_to: none
+version: 0.2.0+2
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  shared_preferences: ^2.2.3
+  intl: ^0.19.0
+  http: ^1.2.2
+  # Pure-Dart Supabase core (no app_links/objective_c native-assets chain, so it
+  # builds cleanly even when the SDK path contains spaces). Session persistence
+  # is handled manually in supabase_client.dart.
+  supabase: ^2.9.0
+  flutter_dotenv: ^5.1.0
+  # Real OS notifications (scheduled reminders + surfacing admin broadcasts).
+  # Standard method-channel plugins (no native-assets chain), so they build
+  # cleanly even when the SDK path contains spaces — unlike the firebase stack.
+  flutter_local_notifications: ^17.2.3
+  timezone: ^0.9.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+    - assets/week/
